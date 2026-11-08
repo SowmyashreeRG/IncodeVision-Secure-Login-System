@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Secure Login System</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+      }
+
+      .register-card {
+        width: 380px;
+        max-width: 90%;
+        padding: 40px 35px;
+        background: white;
+        border-radius: 18px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 27px;
+      }
+
+      .subtitle {
+        color: #777;
+        margin-bottom: 30px;
+        font-size: 14px;
+      }
+
+      input {
+        width: 100%;
+        padding: 13px;
+        margin-bottom: 18px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        outline: none;
+        font-size: 15px;
+      }
+
+      input:focus {
+        border-color: #667eea;
+      }
+
+      button {
+        width: 100%;
+        padding: 13px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      .login-link {
+        margin-top: 22px;
+        color: #666;
+        font-size: 14px;
+      }
+
+      a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .message {
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 18px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .message.success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .message.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      .message.warning {
+        background: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeeba;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="register-card">
+      <h1>Create Account</h1>
+      <p class="subtitle">Join our Secure Login System</p>
+
+      {% with messages = get_flashed_messages(with_categories=true) %} {% for
+      category, message in messages %}
+      <div class="message {{ category }}">{{ message }}</div>
+      {% endfor %} {% endwith %}
+      <form action="/register" method="POST">
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter Username"
+          required
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          required
+        />
+
+        <button type="submit">Create Account</button>
+      </form>
+
+      <p class="login-link">
+        Already have an account?
+        <a href="/login">Login Here</a>
+      </p>
+    </div>
+  </body>
+</html>

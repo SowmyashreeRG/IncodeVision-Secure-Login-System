@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Secure Login System</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+      }
+
+      .dashboard-card {
+        width: 500px;
+        max-width: 90%;
+        padding: 45px 35px;
+        background: white;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .success-icon {
+        width: 75px;
+        height: 75px;
+        line-height: 75px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        background: #e5f9ed;
+        color: #28a745;
+        font-size: 38px;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 12px;
+        font-size: 28px;
+      }
+
+      h2 {
+        color: #667eea;
+        margin-bottom: 18px;
+        font-size: 20px;
+      }
+
+      p {
+        color: #777;
+        margin-bottom: 12px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .logout-button {
+        margin-top: 20px;
+        padding: 13px 35px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .logout-button:hover {
+        opacity: 0.9;
+      }
+
+      .secure-message {
+        margin-top: 22px;
+        padding: 12px;
+        background: #f0f4ff;
+        color: #5969b5;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-card">
+      <div class="success-icon">✓</div>
+
+      <h1>Welcome to Your Dashboard!</h1>
+
+      <h2>Login Successful</h2>
+
+      <p>You have successfully logged into your account.</p>
+
+      <div class="secure-message">🔒 Your account is secure.</div>
+
+      <form action="/logout" method="POST">
+        <button type="submit" class="logout-button">Logout</button>
+      </form>
+    </div>
+  </body>
+</html>

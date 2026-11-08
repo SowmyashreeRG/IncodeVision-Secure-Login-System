@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# Environment secrets
+.env
+.env.*
+
+# Database
+users.db
+*.db
+
+# IDE
+.vscode/
